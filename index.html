@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace Agency — Исследование агентского рынка России 2026</title>
+<style>
+:root {
+    --bg: #0B0A14;
+    --bg2: #110F1E;
+    --bg3: #181530;
+    --card: #141028;
+    --card2: #1C1838;
+    --border: #2A2440;
+    --border2: #3D3560;
+    --text: #E8E4F0;
+    --text2: #A8A0BE;
+    --text3: #706890;
+    --violet: #776AFE;
+    --violet2: #9B8AFF;
+    --violet-bg: rgba(119,106,254,0.08);
+    --violet-border: rgba(119,106,254,0.25);
+    --cyan: #A1FCFF;
+    --cyan-bg: rgba(161,252,255,0.08);
+    --red: #D44040;
+    --red-bg: rgba(212,64,64,0.08);
+    --green: #3DB86A;
+    --green-bg: rgba(61,184,106,0.08);
+    --blue: #4A8FE0;
+    --blue-bg: rgba(74,143,224,0.08);
+    --purple: #9060D0;
+    --purple-bg: rgba(144,96,208,0.08);
+    --orange: #E08040;
+    --orange-bg: rgba(224,128,64,0.08);
+    --teal: #40B0A0;
+    --gold: #C9A44C;
+    --gold-bg: rgba(201,164,76,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.65; }
+.container { max-width: 1440px; margin: 0 auto; padding: 24px; }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 70px 24px 50px;
+    background: linear-gradient(180deg, #15102A 0%, #0E0C1A 50%, var(--bg) 100%);
+    border-bottom: 1px solid var(--violet-border);
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 900px;
+    background: radial-gradient(ellipse, rgba(119,106,254,0.12) 0%, rgba(161,252,255,0.03) 40%, transparent 70%);
+    pointer-events: none;
+}
+.hero-brand {
+    font-size: 0.85em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--violet2);
+    margin-bottom: 16px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 2.4em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 8px;
+    position: relative;
+}
+.hero h1 span { color: var(--violet); }
+.hero .sub {
+    font-size: 1.15em;
+    color: var(--text2);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    position: relative;
+}
+.hero .date {
+    margin-top: 14px;
+    font-size: 0.85em;
+    color: var(--text3);
+    position: relative;
+}
+.hero .badges { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; position: relative; }
+.hero .hbadge {
+    background: var(--violet-bg); border: 1px solid var(--violet-border);
+    border-radius: 20px; padding: 6px 16px; font-size: 0.82em; color: var(--violet2);
+}
+
+/* NAV */
+.nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav .container { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.nav a {
+    color: var(--violet); text-decoration: none; font-size: 0.75em; padding: 5px 12px;
+    border: 1px solid var(--border); border-radius: 4px; transition: all .2s;
+    letter-spacing: 0.5px; text-transform: uppercase;
+}
+.nav a:hover { background: var(--violet); color: var(--bg); border-color: var(--violet); text-decoration: none; }
+
+/* SECTIONS */
+.section { margin: 48px 0; }
+.section-head {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+.section-num {
+    width: 42px; height: 42px;
+    background: var(--violet);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1em;
+    flex-shrink: 0;
+}
+.section-head h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text);
+}
+.section-desc {
+    color: var(--text2);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    max-width: 1000px;
+}
+
+/* CARDS */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--border2); }
+.card-violet { border-color: var(--violet-border); background: linear-gradient(135deg, var(--card) 0%, #1A1530 100%); }
+.card-red { border-left: 4px solid var(--red); }
+.card-green { border-left: 4px solid var(--green); }
+.card-blue { border-left: 4px solid var(--blue); }
+.card-cyan { border-left: 4px solid var(--cyan); }
+.card h3 { color: var(--violet2); font-size: 1.15em; font-weight: 600; margin-bottom: 12px; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1024px) { .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+/* METRICS */
+.metric {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.metric .val { font-size: 2em; font-weight: 700; line-height: 1.2; }
+.metric .lbl { color: var(--text3); font-size: 0.82em; margin-top: 6px; }
+.val-violet { color: var(--violet); }
+.val-cyan { color: var(--cyan); }
+.val-red { color: var(--red); }
+.val-green { color: var(--green); }
+.val-blue { color: var(--blue); }
+.val-purple { color: var(--purple); }
+.val-orange { color: var(--orange); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 12px 0; }
+th, td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left; }
+th { background: var(--bg3); color: var(--violet); font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; position: sticky; top: 0; }
+td.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr:hover { background: rgba(119,106,254,0.03); }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+
+/* BADGES */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.78em; font-weight: 600; }
+.b-violet { background: var(--violet-bg); color: var(--violet); border: 1px solid var(--violet-border); }
+.b-cyan { background: var(--cyan-bg); color: var(--cyan); border: 1px solid rgba(161,252,255,0.3); }
+.b-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(61,184,106,0.3); }
+.b-red { background: var(--red-bg); color: var(--red); border: 1px solid rgba(212,64,64,0.3); }
+.b-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(74,143,224,0.3); }
+.b-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid rgba(144,96,208,0.3); }
+.b-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid rgba(224,128,64,0.3); }
+
+/* BAR CHART */
+.bar-row { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+.bar-label { width: 160px; font-size: 0.82em; color: var(--text2); text-align: right; flex-shrink: 0; }
+.bar-track { flex: 1; background: var(--bg3); border-radius: 6px; height: 28px; position: relative; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.78em; font-weight: 700; color: #fff; min-width: 50px; transition: width 0.6s ease; }
+
+/* INFO TIP */
+.info-tip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(119,106,254,0.08); border: 1px solid rgba(119,106,254,0.2);
+    border-radius: 8px; padding: 8px 14px; margin-bottom: 16px;
+    font-size: 0.82em; color: var(--violet); width: 100%;
+}
+.info-tip .ii {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(119,106,254,0.2); color: var(--violet);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85em; flex-shrink: 0; font-style: italic;
+}
+.info-tip span { color: var(--text2); }
+.info-tip strong { color: var(--violet); }
+
+/* ALERT */
+.alert { border-radius: 12px; padding: 20px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start; }
+.alert-violet { background: var(--violet-bg); border: 1px solid var(--violet-border); }
+.alert-cyan { background: var(--cyan-bg); border: 1px solid rgba(161,252,255,0.3); }
+.alert-red { background: var(--red-bg); border: 1px solid rgba(212,64,64,0.3); }
+.alert-icon { font-size: 1.8em; flex-shrink: 0; line-height: 1; }
+.alert-content h4 { margin-bottom: 6px; font-size: 1em; }
+.alert-content p { font-size: 0.88em; color: var(--text2); line-height: 1.6; }
+
+/* SWOT */
+.swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.swot-box { border-radius: 12px; padding: 20px; }
+.swot-s { background: rgba(61,184,106,0.06); border: 1px solid rgba(61,184,106,0.2); }
+.swot-w { background: rgba(212,64,64,0.06); border: 1px solid rgba(212,64,64,0.2); }
+.swot-o { background: rgba(74,143,224,0.06); border: 1px solid rgba(74,143,224,0.2); }
+.swot-t { background: rgba(224,128,64,0.06); border: 1px solid rgba(224,128,64,0.2); }
+.swot-box h4 { font-size: 0.95em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.swot-s h4 { color: var(--green); }
+.swot-w h4 { color: var(--red); }
+.swot-o h4 { color: var(--blue); }
+.swot-t h4 { color: var(--orange); }
+.swot-box ul { list-style: none; padding: 0; }
+.swot-box li { padding: 4px 0; font-size: 0.88em; color: var(--text2); position: relative; padding-left: 18px; }
+.swot-s li::before { content: '+'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+.swot-w li::before { content: '−'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+.swot-o li::before { content: '↑'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+.swot-t li::before { content: '!'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+
+/* DELTA */
+.delta { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.72em; font-weight: 700; vertical-align: middle; margin-left: 6px; }
+.delta-up { background: rgba(61,184,106,0.15); color: var(--green); }
+.delta-down { background: rgba(212,64,64,0.15); color: var(--red); }
+
+/* FLOW CHART */
+.flow { display: flex; align-items: center; gap: 0; margin: 20px 0; flex-wrap: wrap; justify-content: center; }
+.flow-step { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; text-align: center; min-width: 140px; }
+.flow-step .flow-title { color: var(--violet2); font-weight: 600; font-size: 0.85em; margin-bottom: 4px; }
+.flow-step .flow-desc { color: var(--text3); font-size: 0.75em; }
+.flow-arrow { color: var(--violet); font-size: 1.6em; padding: 0 8px; }
+
+/* COMPARISON TABLE */
+.comp-row { display: flex; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: center; }
+.comp-name { width: 140px; font-size: 0.85em; color: var(--text2); flex-shrink: 0; }
+.comp-bar { flex: 1; height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.comp-bar-inner { height: 100%; border-radius: 4px; }
+.comp-val { width: 80px; text-align: right; font-size: 0.82em; font-weight: 600; color: var(--text); flex-shrink: 0; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); margin-top: 48px; }
+.footer p { color: var(--text3); font-size: 0.82em; }
+.footer a { color: var(--violet); }
+
+/* SCROLL ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.6em; }
+    .flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .bar-label { width: 100px; font-size: 0.75em; }
+    .swot-grid { grid-template-columns: 1fr; }
+    .comp-name { width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-brand">Espace Agency</div>
+    <h1>Исследование <span>агентского рынка</span> России</h1>
+    <div class="sub">Рынок digital-агентств, AI-инструменты, сквозная аналитика</div>
+    <div class="date">Февраль 2026 | Аналитический отчёт</div>
+    <div class="badges">
+        <span class="hbadge">ТОП-20 агентств</span>
+        <span class="hbadge">Прогноз до 2030</span>
+        <span class="hbadge">AI-сайты для SEO</span>
+        <span class="hbadge">Сквозная аналитика</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <div class="container">
+        <a href="#company">О компании</a>
+        <a href="#market">Рынок</a>
+        <a href="#leaders">Лидеры</a>
+        <a href="#growth">Рост</a>
+        <a href="#forecast">Прогноз 2030</a>
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Чеки</a>
+        <a href="#ai-sites">AI-сайты</a>
+        <a href="#tilda">Тильда</a>
+        <a href="#analytics">Аналитика</a>
+        <a href="#scheme">Схема</a>
+        <a href="#swot">SWOT</a>
+        <a href="#recommendations">Рекомендации</a>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ===== SECTION 1: О КОМПАНИИ ===== -->
+<div class="section fade-in" id="company">
+    <div class="section-head">
+        <div class="section-num">1</div>
+        <h2>О компании Espace Agency</h2>
+    </div>
+    <div class="section-desc">Digital-агентство полного цикла. Основатель — Ангелина Васильева. Специализация: перформанс-маркетинг, таргет, контекст, SEO.</div>
+
+    <div class="grid-4">
+        <div class="metric">
+            <div class="val val-violet">50+</div>
+            <div class="lbl">Кейсов в 30+ нишах</div>
+        </div>
+        <div class="metric">
+            <div class="val val-cyan">10+</div>
+            <div class="lbl">Лет опыта в команде</div>
+        </div>
+        <div class="metric">
+            <div class="val val-green">-30-40%</div>
+            <div class="lbl">Снижение стоимости заявки</div>
+        </div>
+        <div class="metric">
+            <div class="val val-orange">500%+</div>
+            <div class="lbl">ROMI клиентов</div>
+        </div>
+    </div>
+
+    <div class="card card-violet" style="margin-top:20px">
+        <h3>Реквизиты</h3>
+        <table>
+            <tr><td style="color:var(--text3);width:200px">Юрлицо</td><td>ИП Васильева Ангелина Александровна</td></tr>
+            <tr><td style="color:var(--text3)">ИНН</td><td>151303250905</td></tr>
+            <tr><td style="color:var(--text3)">ОГРНИП</td><td>325150000032965</td></tr>
+            <tr><td style="color:var(--text3)">Телефон</td><td>+7 (988) 875-39-28</td></tr>
+            <tr><td style="color:var(--text3)">Telegram</td><td>@angelina_espace / @angelinaa_va</td></tr>
+            <tr><td style="color:var(--text3)">Сайты</td><td>espace-agency.ru | эспейс.рф</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Услуги</h3>
+        <div class="grid-3" style="margin-top:12px">
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-violet">Таргет</span> <span style="color:var(--text2);font-size:0.85em">ВК, TG, ОК, Авито</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-blue">Контекст</span> <span style="color:var(--text2);font-size:0.85em">Яндекс Директ, Google Ads</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-purple">Блогеры</span> <span style="color:var(--text2);font-size:0.85em">Подбор и закупка</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-green">SEO</span> <span style="color:var(--text2);font-size:0.85em">ТОП-10 в выдаче</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-cyan">Сайты</span> <span style="color:var(--text2);font-size:0.85em">Дизайн и вёрстка</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><span class="badge b-orange">Аналитика</span> <span style="color:var(--text2);font-size:0.85em">Roistat, Calltouch</span></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Кейсы</h3>
+        <div class="grid-3" style="margin-top:12px">
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-weight:600;font-size:0.85em;margin-bottom:8px">The Kitchen</div>
+                <div class="val val-green" style="font-size:1.4em">210</div>
+                <div class="lbl">Заявок/мес с нуля</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-weight:600;font-size:0.85em;margin-bottom:8px">Lobacheva Project</div>
+                <div class="val val-green" style="font-size:1.4em">x2.5</div>
+                <div class="lbl">Снижение цены лида</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-weight:600;font-size:0.85em;margin-bottom:8px">Clean Now</div>
+                <div class="val val-green" style="font-size:1.4em">x2</div>
+                <div class="lbl">Снижение цены заявки</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 2: РЫНОК ===== -->
+<div class="section fade-in" id="market">
+    <div class="section-head">
+        <div class="section-num">2</div>
+        <h2>Рынок digital-рекламы России</h2>
+    </div>
+    <div class="section-desc">По данным АКАР, объём рекламного рынка России в 2024 году составил 903,6 млрд рублей (+24% к 2023 г.). Россия — 14-е место в мире по объёму рекламного рынка.</div>
+
+    <div class="grid-4">
+        <div class="metric">
+            <div class="val val-violet">903.6</div>
+            <div class="lbl">млрд руб. рынок 2024</div>
+        </div>
+        <div class="metric">
+            <div class="val val-green">+24%</div>
+            <div class="lbl">Рост к 2023</div>
+        </div>
+        <div class="metric">
+            <div class="val val-cyan">~1.9 трлн</div>
+            <div class="lbl">С Retail Media, 2025</div>
+        </div>
+        <div class="metric">
+            <div class="val val-orange">14-е</div>
+            <div class="lbl">Место в мире</div>
+        </div>
+    </div>
+
+    <!-- Объём рынка — бар чарт -->
+    <div class="card" style="margin-top:20px">
+        <h3>Объём рекламного рынка России по годам</h3>
+        <div style="margin-top:16px">
+            <svg viewBox="0 0 800 300" style="width:100%;max-width:800px">
+                <!-- Grid lines -->
+                <line x1="100" y1="40" x2="760" y2="40" stroke="#2A2440" stroke-width="1"/>
+                <line x1="100" y1="100" x2="760" y2="100" stroke="#2A2440" stroke-width="1"/>
+                <line x1="100" y1="160" x2="760" y2="160" stroke="#2A2440" stroke-width="1"/>
+                <line x1="100" y1="220" x2="760" y2="220" stroke="#2A2440" stroke-width="1"/>
+                <!-- Y axis labels -->
+                <text x="90" y="44" fill="#706890" font-size="11" text-anchor="end">2.0 трлн</text>
+                <text x="90" y="104" fill="#706890" font-size="11" text-anchor="end">1.5 трлн</text>
+                <text x="90" y="164" fill="#706890" font-size="11" text-anchor="end">1.0 трлн</text>
+                <text x="90" y="224" fill="#706890" font-size="11" text-anchor="end">0.5 трлн</text>
+                <!-- Bars: scale = 220px for 2.0 трлн -->
+                <!-- 2023: 729 млрд = 36% of 2T = 80px from bottom (260) -->
+                <rect x="140" y="180" width="60" height="80" rx="4" fill="#776AFE" opacity="0.7"/>
+                <text x="170" y="175" fill="#9B8AFF" font-size="12" font-weight="600" text-anchor="middle">729</text>
+                <text x="170" y="275" fill="#A8A0BE" font-size="11" text-anchor="middle">2023</text>
+                <!-- 2024: 904 млрд = 45% = 99px -->
+                <rect x="260" y="161" width="60" height="99" rx="4" fill="#776AFE" opacity="0.85"/>
+                <text x="290" y="156" fill="#9B8AFF" font-size="12" font-weight="600" text-anchor="middle">904</text>
+                <text x="290" y="275" fill="#A8A0BE" font-size="11" text-anchor="middle">2024</text>
+                <!-- 2025: ~1050 млрд = 52.5% = 115px -->
+                <rect x="380" y="145" width="60" height="115" rx="4" fill="#A1FCFF" opacity="0.7"/>
+                <text x="410" y="140" fill="#A1FCFF" font-size="12" font-weight="600" text-anchor="middle">~1 050</text>
+                <text x="410" y="275" fill="#A8A0BE" font-size="11" text-anchor="middle">2025*</text>
+                <!-- 2025 с RM: 1900 = 95% = 209px -->
+                <rect x="500" y="51" width="60" height="209" rx="4" fill="#3DB86A" opacity="0.5"/>
+                <text x="530" y="46" fill="#3DB86A" font-size="12" font-weight="600" text-anchor="middle">~1 900</text>
+                <text x="530" y="275" fill="#A8A0BE" font-size="11" text-anchor="middle">2025+RM*</text>
+                <!-- 2030: ~2000 basic -->
+                <rect x="620" y="40" width="60" height="220" rx="4" fill="#9060D0" opacity="0.5"/>
+                <text x="650" y="35" fill="#9060D0" font-size="12" font-weight="600" text-anchor="middle">4-5 трлн</text>
+                <text x="650" y="275" fill="#A8A0BE" font-size="11" text-anchor="middle">2030*</text>
+            </svg>
+            <div style="font-size:0.75em;color:var(--text3);margin-top:8px">* Прогноз. RM = Retail Media. Источники: АКАР, Okkam, AdIndex, Ведомости</div>
+        </div>
+    </div>
+
+    <!-- Структура рынка -->
+    <div class="card">
+        <h3>Структура рекламного рынка 2024</h3>
+        <div style="display:flex;align-items:center;gap:40px;flex-wrap:wrap;margin-top:12px">
+            <svg viewBox="0 0 200 200" style="width:180px;flex-shrink:0">
+                <!-- Donut chart -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#2A2440" stroke-width="24"/>
+                <!-- Digital: 52% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#776AFE" stroke-width="24" stroke-dasharray="261 502" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                <!-- TV+OLV: 31% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#A1FCFF" stroke-width="24" stroke-dasharray="156 502" stroke-dashoffset="-261" transform="rotate(-90 100 100)"/>
+                <!-- OOH: 11% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#3DB86A" stroke-width="24" stroke-dasharray="55 502" stroke-dashoffset="-417" transform="rotate(-90 100 100)"/>
+                <!-- Other: 6% -->
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#E08040" stroke-width="24" stroke-dasharray="30 502" stroke-dashoffset="-472" transform="rotate(-90 100 100)"/>
+                <text x="100" y="95" fill="#E8E4F0" font-size="18" font-weight="700" text-anchor="middle">903.6</text>
+                <text x="100" y="115" fill="#706890" font-size="10" text-anchor="middle">млрд руб.</text>
+            </svg>
+            <div>
+                <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:12px;height:12px;background:#776AFE;border-radius:3px"></div><span style="color:var(--text2);font-size:0.88em">Digital (интернет) — <strong style="color:var(--violet)">~52%</strong> (~470 млрд)</span></div>
+                <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:12px;height:12px;background:#A1FCFF;border-radius:3px"></div><span style="color:var(--text2);font-size:0.88em">Видео (ТВ + OLV) — <strong style="color:var(--cyan)">31%</strong> (285 млрд)</span></div>
+                <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:12px;height:12px;background:#3DB86A;border-radius:3px"></div><span style="color:var(--text2);font-size:0.88em">OOH (наружка) — <strong style="color:var(--green)">11%</strong> (97 млрд) <span class="delta delta-up">+45%</span></span></div>
+                <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:12px;height:12px;background:#E08040;border-radius:3px"></div><span style="color:var(--text2);font-size:0.88em">Аудио и другое — <strong style="color:var(--orange)">6%</strong></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 3: ЛИДЕРЫ ===== -->
+<div class="section fade-in" id="leaders">
+    <div class="section-head">
+        <div class="section-num">3</div>
+        <h2>ТОП-20 агентств по выручке</h2>
+    </div>
+    <div class="section-desc">Рейтинг DMC Rus за 2024 финансовый год. Совокупная выручка ТОП-40 digital-агентств превысила 155 млрд рублей.</div>
+
+    <div class="card">
+        <div style="overflow-x:auto">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Агентство</th>
+                    <th>Группа</th>
+                    <th>Выручка, млрд</th>
+                    <th>Рост г/г</th>
+                    <th>Штат</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>MGCom</strong></td><td>MGCom Group</td><td class="r">35.9</td><td class="pos">+16.0%</td><td class="r">805</td></tr>
+                <tr><td>2</td><td><strong>Realweb</strong></td><td>ГК Realweb</td><td class="r">14.6</td><td class="pos">+10.1%</td><td class="r">553</td></tr>
+                <tr><td>3</td><td><strong>icontext</strong></td><td>iConText Group</td><td class="r">10.4</td><td class="pos">+50.6%</td><td class="r">169</td></tr>
+                <tr><td>4</td><td><strong>ПроКонтекст</strong></td><td>—</td><td class="r">7.7</td><td class="pos">+22.3%</td><td class="r">87</td></tr>
+                <tr><td>5</td><td><strong>OOM</strong></td><td>Okkam</td><td class="r">7.3</td><td class="neg">-2.6%</td><td class="r">85</td></tr>
+                <tr><td>6</td><td><strong>profitator</strong></td><td>Kokoc Group</td><td class="r">7.3</td><td class="pos">+20.3%</td><td class="r">305</td></tr>
+                <tr><td>7</td><td><strong>ArrowMedia</strong></td><td>ГК ArrowMedia</td><td class="r">7.1</td><td class="pos">+15.3%</td><td class="r">299</td></tr>
+                <tr><td>8</td><td><strong>Артикс</strong></td><td>MGCom Group</td><td class="r">5.9</td><td class="neg">-6.5%</td><td class="r">134</td></tr>
+                <tr><td>9</td><td><strong>GO Mobile</strong></td><td>GoAhead</td><td class="r">5.5</td><td class="pos">+17.1%</td><td class="r">121</td></tr>
+                <tr><td>10</td><td><strong>AdLabs</strong></td><td>АДВ</td><td class="r">5.0</td><td class="pos" style="color:#A1FCFF;font-weight:800">+106.5%</td><td class="r">54</td></tr>
+                <tr><td>11</td><td><strong>SA Digital</strong></td><td>SA Media Group</td><td class="r">4.9</td><td class="pos">+50.3%</td><td class="r">102</td></tr>
+                <tr><td>12</td><td><strong>Mediapronet</strong></td><td>—</td><td class="r">4.6</td><td class="pos">+39.9%</td><td class="r">71</td></tr>
+                <tr><td>13</td><td><strong>Rocket10</strong></td><td>Rocket Group</td><td class="r">4.6</td><td class="pos">+49.5%</td><td class="r">141</td></tr>
+                <tr><td>14</td><td><strong>i-media</strong></td><td>—</td><td class="r">4.0</td><td class="pos">+18.3%</td><td class="r">86</td></tr>
+                <tr><td>15</td><td><strong>Digital Twiga</strong></td><td>Twiga CG</td><td class="r">3.8</td><td class="pos">+36.7%</td><td class="r">166</td></tr>
+                <tr><td>16</td><td><strong>i.com</strong></td><td>i.com group</td><td class="r">3.7</td><td class="pos">+39.2%</td><td class="r">117</td></tr>
+                <tr><td>17</td><td><strong>Registratura</strong></td><td>iConText Group</td><td class="r">3.7</td><td class="neg">-19.2%</td><td class="r">35</td></tr>
+                <tr><td>18</td><td><strong>E-Promo</strong></td><td>E-Promo Group</td><td class="r">~3.5</td><td class="pos">+63.1%</td><td class="r">488</td></tr>
+                <tr><td>19</td><td><strong>Nectarin</strong></td><td>—</td><td class="r">~3.0</td><td style="color:var(--text3)">—</td><td class="r">—</td></tr>
+                <tr><td>20</td><td><strong>DOT</strong></td><td>—</td><td class="r">~2.5</td><td style="color:var(--text3)">—</td><td class="r">—</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">Источник: DMC Rus — Рейтинг digital-агентств по выручке за 2024</div>
+    </div>
+
+    <!-- ТОП-10 групп -->
+    <div class="card">
+        <h3>ТОП-10 агентских групп по выручке</h3>
+        <div style="margin-top:12px">
+            <div class="bar-row"><div class="bar-label">MGCom Group</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#776AFE,#9B8AFF)">56.9 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">Okkam</div><div class="bar-track"><div class="bar-fill" style="width:85%;background:linear-gradient(90deg,#776AFE,#A1FCFF)">48.7 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">ГК Realweb</div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#776AFE">20.1 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">Kokoc Group</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#3DB86A">16.2 млрд <span class="delta delta-up" style="margin-left:6px;font-size:0.85em">+91%</span></div></div></div>
+            <div class="bar-row"><div class="bar-label">iConText Group</div><div class="bar-track"><div class="bar-fill" style="width:26%;background:#776AFE">14.8 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">i.com group</div><div class="bar-track"><div class="bar-fill" style="width:17%;background:#3DB86A">9.8 млрд <span class="delta delta-up" style="margin-left:6px;font-size:0.85em">+108%</span></div></div></div>
+            <div class="bar-row"><div class="bar-label">ГК ArrowMedia</div><div class="bar-track"><div class="bar-fill" style="width:17%;background:#776AFE">9.5 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">Rocket Group</div><div class="bar-track"><div class="bar-fill" style="width:12%;background:#776AFE">6.9 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">GoAhead</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:#776AFE">5.8 млрд</div></div></div>
+            <div class="bar-row"><div class="bar-label">E-Promo Group</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#3DB86A">4.3 млрд <span class="delta delta-up" style="margin-left:6px;font-size:0.85em">+63%</span></div></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 4: РОСТ ===== -->
+<div class="section fade-in" id="growth">
+    <div class="section-head">
+        <div class="section-num">4</div>
+        <h2>Кто растёт быстрее всех</h2>
+    </div>
+    <div class="section-desc">Агентства с максимальным ростом выручки в 2024 году. По данным Workspace: 47% агентств увеличили выручку (средний прирост +37%), 24% — снизили (-27%).</div>
+
+    <div class="grid-2">
+        <div class="card card-green">
+            <h3 style="color:var(--green)">Лидеры роста</h3>
+            <table>
+                <tr><td><strong>i.com group</strong></td><td class="r pos">+108%</td></tr>
+                <tr><td><strong>AdLabs</strong> (АДВ)</td><td class="r pos">+107%</td></tr>
+                <tr><td><strong>Kokoc Group</strong></td><td class="r pos">+91%</td></tr>
+                <tr><td><strong>E-Promo Group</strong></td><td class="r pos">+63%</td></tr>
+                <tr><td><strong>icontext</strong></td><td class="r pos">+51%</td></tr>
+                <tr><td><strong>SA Digital</strong></td><td class="r pos">+50%</td></tr>
+                <tr><td><strong>Rocket10</strong></td><td class="r pos">+50%</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <h3>5 драйверов роста</h3>
+            <div style="margin-top:12px">
+                <div style="display:flex;align-items:flex-start;gap:12px;margin:12px 0">
+                    <span class="badge b-violet" style="flex-shrink:0;margin-top:2px">1</span>
+                    <div><strong style="color:var(--text)">AI и автоматизация</strong><br><span style="color:var(--text2);font-size:0.88em">Kokoc запустил витрину AdTech-решений с МТС на базе AI. iConText внедряет ИИ-агентов для бизнеса</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;margin:12px 0">
+                    <span class="badge b-green" style="flex-shrink:0;margin-top:2px">2</span>
+                    <div><strong style="color:var(--text)">Retail Media</strong><br><span style="color:var(--text2);font-size:0.88em">Ozon, Wildberries, Яндекс Маркет — рост с 515 до 891 млрд руб. (+73%)</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;margin:12px 0">
+                    <span class="badge b-cyan" style="flex-shrink:0;margin-top:2px">3</span>
+                    <div><strong style="color:var(--text)">Telegram Ads</strong><br><span style="color:var(--text2);font-size:0.88em">Рост бюджетов ~300% год к году. Отдельная категория в рейтинге AdIndex с 2024</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;margin:12px 0">
+                    <span class="badge b-orange" style="flex-shrink:0;margin-top:2px">4</span>
+                    <div><strong style="color:var(--text)">Перформанс на отечественных площадках</strong><br><span style="color:var(--text2);font-size:0.88em">Переход бюджетов из Google/Meta* в Яндекс Директ и VK Ads</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;margin:12px 0">
+                    <span class="badge b-purple" style="flex-shrink:0;margin-top:2px">5</span>
+                    <div><strong style="color:var(--text)">Нишевая специализация</strong><br><span style="color:var(--text2);font-size:0.88em">Агентства в конкретных вертикалях (e-com, fintech, недвижимость) растут быстрее</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 5: ПРОГНОЗ ===== -->
+<div class="section fade-in" id="forecast">
+    <div class="section-head">
+        <div class="section-num">5</div>
+        <h2>Прогноз рынка до 2030</h2>
+    </div>
+
+    <div class="card">
+        <h3>Динамика рекламного рынка</h3>
+        <table>
+            <thead><tr><th>Год</th><th>Без Retail Media</th><th>С Retail Media</th><th>Рост</th></tr></thead>
+            <tbody>
+                <tr><td>2023</td><td class="r">~729 млрд</td><td class="r">—</td><td class="pos">+30%</td></tr>
+                <tr><td>2024</td><td class="r">904 млрд</td><td class="r">~1.4 трлн</td><td class="pos">+24%</td></tr>
+                <tr><td>2025*</td><td class="r">~1.05 трлн</td><td class="r">~1.9 трлн</td><td class="pos">+10-14%</td></tr>
+                <tr><td>2026*</td><td class="r">1.0-1.4 трлн</td><td class="r">~2.0 трлн</td><td class="pos">+6-15%</td></tr>
+                <tr><td>2028*</td><td class="r">1.3-1.7 трлн</td><td class="r">~3.0-3.5 трлн</td><td style="color:var(--text3)">прогноз</td></tr>
+                <tr><td>2030*</td><td class="r">1.6-2.1 трлн</td><td class="r">~4.0-5.0 трлн</td><td style="color:var(--text3)">прогноз</td></tr>
+            </tbody>
+        </table>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">* Прогноз. Источники: АКАР, Okkam, AdIndex, Ведомости</div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card card-green">
+            <h3 style="color:var(--green)">Драйверы роста</h3>
+            <ul style="list-style:none;padding:0">
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9654; <strong>Retail Media</strong> — рост 50-73%/год, доля до 46% рынка</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9654; <strong>AI/ML</strong> — генерация креативов, таргетинг, AI-агенты</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9654; <strong>Telegram</strong> — 80M+ аудитория РФ, новые форматы</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9654; <strong>CTV/видео</strong> — онлайн-кинотеатры, видеореклама</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9654; <strong>Импортозамещение</strong> — уход Google/Meta* создал спрос</li>
+            </ul>
+        </div>
+        <div class="card card-red">
+            <h3 style="color:var(--red)">Угрозы</h3>
+            <ul style="list-style:none;padding:0">
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9888; <strong>Медиаинфляция</strong> — CPM/CPC растут на 20-40%/год</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9888; <strong>Высокая ключевая ставка ЦБ</strong> — снижает инвестиции</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9888; <strong>Закон о маркировке</strong> — регуляторное давление</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9888; <strong>Кадровый дефицит</strong> — зарплаты +15-25%/год</li>
+                <li style="padding:6px 0;color:var(--text2);font-size:0.9em">&#9888; <strong>Answer Engines</strong> — снижение CTR органики</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 6: УСЛУГИ ===== -->
+<div class="section fade-in" id="services">
+    <div class="section-head">
+        <div class="section-num">6</div>
+        <h2>Востребованные услуги</h2>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3>Сейчас (2024-2025)</h3>
+            <div style="margin-top:12px">
+                <div class="bar-row"><div class="bar-label">Веб-разработка</div><div class="bar-track"><div class="bar-fill" style="width:86%;background:#776AFE">86%</div></div></div>
+                <div class="bar-row"><div class="bar-label">SEO</div><div class="bar-track"><div class="bar-fill" style="width:33%;background:#776AFE">33%</div></div></div>
+                <div class="bar-row"><div class="bar-label">Контекст/Таргет</div><div class="bar-track"><div class="bar-fill" style="width:31%;background:#776AFE">31%</div></div></div>
+                <div class="bar-row"><div class="bar-label">Моб. разработка</div><div class="bar-track"><div class="bar-fill" style="width:21%;background:#776AFE">21%</div></div></div>
+                <div class="bar-row"><div class="bar-label">SMM и PR</div><div class="bar-track"><div class="bar-fill" style="width:18%;background:#776AFE">18%</div></div></div>
+                <div class="bar-row"><div class="bar-label">Маркетинг</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#776AFE">16%</div></div></div>
+            </div>
+            <div style="font-size:0.75em;color:var(--text3);margin-top:8px">% агентств, оказывающих услугу. Источник: Workspace</div>
+        </div>
+        <div class="card">
+            <h3>Тренды 2026-2030</h3>
+            <table>
+                <thead><tr><th>Услуга</th><th>Прогноз</th></tr></thead>
+                <tbody>
+                    <tr><td>Retail Media / маркетплейсы</td><td><span class="badge b-green">Максимальный рост</span></td></tr>
+                    <tr><td>AI-маркетинг / автоматизация</td><td><span class="badge b-green">Высокий</span></td></tr>
+                    <tr><td>Telegram Ads</td><td><span class="badge b-green">Высокий</span></td></tr>
+                    <tr><td>CTV / видеореклама</td><td><span class="badge b-green">Высокий</span></td></tr>
+                    <tr><td>Перформанс (Яндекс, VK)</td><td><span class="badge b-blue">Умеренный</span></td></tr>
+                    <tr><td>SEO</td><td><span class="badge b-blue">Умеренный</span></td></tr>
+                    <tr><td>Контекст (ручное ведение)</td><td><span class="badge b-orange">Замедление</span></td></tr>
+                    <tr><td>SEO-копирайтинг</td><td><span class="badge b-red">Снижение (AI замена)</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 7: ЧЕКИ ===== -->
+<div class="section fade-in" id="pricing">
+    <div class="section-head">
+        <div class="section-num">7</div>
+        <h2>Средние чеки на услуги агентств</h2>
+    </div>
+    <div class="section-desc">Данные Workspace, агентств и отраслевых исследований. Цены растут на 15-25% в год из-за медиаинфляции и кадрового дефицита.</div>
+
+    <div class="card">
+        <div style="overflow-x:auto">
+        <table>
+            <thead>
+                <tr><th>Услуга</th><th>Малый бизнес</th><th>Средний бизнес</th><th>Крупный бизнес</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Контекстная реклама</strong><br><span style="color:var(--text3);font-size:0.82em">ведение + медиабюджет</span></td>
+                    <td>80-280К/мес</td><td>280К-1.2М/мес</td><td>1.2-10М+/мес</td>
+                </tr>
+                <tr>
+                    <td><strong>SEO-продвижение</strong></td>
+                    <td>30-80К/мес</td><td>80-250К/мес</td><td>250К-1М+/мес</td>
+                </tr>
+                <tr>
+                    <td><strong>SMM</strong><br><span style="color:var(--text3);font-size:0.82em">без рекламного бюджета</span></td>
+                    <td>30-80К/мес</td><td>100-300К/мес</td><td>300К-1.5М+/мес</td>
+                </tr>
+                <tr>
+                    <td><strong>Создание сайта</strong><br><span style="color:var(--text3);font-size:0.82em">лендинг / корп / магазин</span></td>
+                    <td>100-200К</td><td>550-800К</td><td>900К-3М+</td>
+                </tr>
+                <tr>
+                    <td><strong>Комплексный маркетинг</strong></td>
+                    <td>100-500К/мес</td><td>500К-3М/мес</td><td>3-30М+/мес</td>
+                </tr>
+                <tr>
+                    <td><strong>Контент-маркетинг</strong><br><span style="color:var(--text3);font-size:0.82em">блог, кейсы, соцсети</span></td>
+                    <td>40-80К/мес</td><td>80-200К/мес</td><td>200К-500К+/мес</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 8: AI-САЙТЫ ===== -->
+<div class="section fade-in" id="ai-sites">
+    <div class="section-head">
+        <div class="section-num">8</div>
+        <h2>AI-сайты для трафика и SEO</h2>
+    </div>
+    <div class="section-desc">Обзор AI-конструкторов сайтов: какие подходят для SEO-продвижения, как ставить на свой домен, интеграция с CRM.</div>
+
+    <div class="card">
+        <h3>Сравнение AI-конструкторов</h3>
+        <div style="overflow-x:auto">
+        <table>
+            <thead>
+                <tr><th>Сервис</th><th>Цена/мес</th><th>Свой домен</th><th>SSR</th><th>SEO-контроль</th><th>Лучше для</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>10Web</strong> (WordPress)</td><td>$10-60</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-green">Полный</span></td><td>Контентные сайты</td></tr>
+                <tr><td><strong>Framer AI</strong></td><td>$5-30</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-blue">Средний</span></td><td>Лендинги, портфолио</td></tr>
+                <tr><td><strong>Wix AI</strong></td><td>$17-36</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-blue">Хороший</span></td><td>Малый бизнес</td></tr>
+                <tr><td><strong>Tilda</strong></td><td>500-1000₽</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-blue">Хороший</span></td><td>Рынок РФ</td></tr>
+                <tr><td><strong>Hostinger AI</strong></td><td>$2-6</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-blue">Средний</span></td><td>Старт за копейки</td></tr>
+                <tr><td><strong>v0.dev</strong> (Vercel)</td><td>$0-20</td><td>Через Vercel</td><td><span class="pos">Да</span></td><td><span class="badge b-green">Полный</span></td><td>Разработчики</td></tr>
+                <tr><td><strong>Bolt.new</strong></td><td>$0-20</td><td>Через Netlify</td><td>Зависит</td><td><span class="badge b-green">Полный</span></td><td>MVP, прототипы</td></tr>
+                <tr><td><strong>Lovable</strong></td><td>$0-25</td><td><span class="pos">Да</span></td><td><span class="neg">Нет</span></td><td><span class="badge b-orange">Базовый</span></td><td>SaaS-приложения</td></tr>
+                <tr><td><strong>Durable</strong></td><td>$12-80</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-orange">Базовый</span></td><td>Локальный бизнес</td></tr>
+                <tr><td><strong>Craftum</strong></td><td>от 159₽</td><td><span class="pos">Да</span></td><td><span class="pos">Да</span></td><td><span class="badge b-blue">Средний</span></td><td>Бюджет РФ</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- Привязка домена -->
+    <div class="card">
+        <h3>Как поставить AI-сайт на свой домен</h3>
+        <div class="flow" style="margin-top:16px">
+            <div class="flow-step">
+                <div class="flow-title">1. Покупка домена</div>
+                <div class="flow-desc">Reg.ru (от 199₽/год)<br>Namecheap ($8-12)<br>Cloudflare (по себестоимости)</div>
+            </div>
+            <div class="flow-arrow">&#8594;</div>
+            <div class="flow-step">
+                <div class="flow-title">2. DNS-настройка</div>
+                <div class="flow-desc">A-запись или CNAME<br>По инструкции конструктора<br>15-60 мин пропагация</div>
+            </div>
+            <div class="flow-arrow">&#8594;</div>
+            <div class="flow-step">
+                <div class="flow-title">3. Привязка в конструкторе</div>
+                <div class="flow-desc">Settings → Domain<br>Ввести домен<br>Верификация</div>
+            </div>
+            <div class="flow-arrow">&#8594;</div>
+            <div class="flow-step">
+                <div class="flow-title">4. SSL автоматически</div>
+                <div class="flow-desc">Let's Encrypt<br>Бесплатно<br>Активация 1-5 мин</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO чеклист -->
+    <div class="card">
+        <h3>SEO-проблемы AI-сайтов и решения</h3>
+        <div class="grid-2" style="margin-top:12px">
+            <div>
+                <div style="margin:8px 0"><span class="badge b-red">Проблема</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Шаблонный контент (Google HCU)</span></div>
+                <div style="margin:8px 0"><span class="badge b-red">Проблема</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">JS-рендеринг (SPA не индексируется)</span></div>
+                <div style="margin:8px 0"><span class="badge b-red">Проблема</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Плохие Core Web Vitals</span></div>
+                <div style="margin:8px 0"><span class="badge b-red">Проблема</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Дублирование контента</span></div>
+            </div>
+            <div>
+                <div style="margin:8px 0"><span class="badge b-green">Решение</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">AI = черновик, ручная доработка</span></div>
+                <div style="margin:8px 0"><span class="badge b-green">Решение</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Выбирать SSR/SSG (Next.js, Framer, Tilda)</span></div>
+                <div style="margin:8px 0"><span class="badge b-green">Решение</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Оптимизация изображений, CDN</span></div>
+                <div style="margin:8px 0"><span class="badge b-green">Решение</span> <span style="color:var(--text2);font-size:0.88em;margin-left:8px">Canonical-теги, уникализация</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 9: ТИЛЬДА ===== -->
+<div class="section fade-in" id="tilda">
+    <div class="section-head">
+        <div class="section-num">9</div>
+        <h2>Перенос AI-сайта на Тильду</h2>
+    </div>
+
+    <div class="alert alert-red" style="margin-bottom:20px">
+        <div class="alert-icon">&#9888;</div>
+        <div class="alert-content">
+            <h4 style="color:var(--red)">Tilda НЕ поддерживает автоматический импорт</h4>
+            <p>Нельзя загрузить HTML и получить готовый сайт. Перенос только ручной или полуавтоматический. Лендинг на 5-10 секций = 3-5 часов работы.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Способы переноса</h3>
+        <table>
+            <thead><tr><th>Способ</th><th>Время</th><th>Качество</th><th>Описание</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Ручной перенос</strong> (стандартные блоки)</td><td>3-8 часов</td><td><span class="badge b-green">Лучшее</span></td><td>Копируете контент, воссоздаёте структуру блоками Tilda</td></tr>
+                <tr><td><strong>Zero Block</strong> (пиксельная точность)</td><td>5-12 часов</td><td><span class="badge b-green">Точное</span></td><td>Свободная вёрстка по скриншотам. Каждый брейкпойнт отдельно</td></tr>
+                <tr><td><strong>HTML-вставка</strong> (блок T123)</td><td>1-2 часа</td><td><span class="badge b-red">Плохое</span></td><td>Вставка кода. CSS конфликты, формы не работают с CRM</td></tr>
+                <tr><td><strong>JustCopy / DevMode</strong></td><td>2-4 часа</td><td><span class="badge b-orange">Среднее</span></td><td>Парсинг → блоки Tilda. Требует ручной доработки. DevMode от 490₽/мес</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Интеграция Tilda с CRM и аналитикой</h3>
+        <div class="grid-3" style="margin-top:12px">
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">AmoCRM</div>
+                <div class="val val-green" style="font-size:1.2em">Нативная</div>
+                <div class="lbl">Встроенная интеграция</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">Битрикс24</div>
+                <div class="val val-green" style="font-size:1.2em">Нативная</div>
+                <div class="lbl">Встроенная интеграция</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">Roistat</div>
+                <div class="val val-blue" style="font-size:1.2em">Через скрипт</div>
+                <div class="lbl">Head-код + скрытые поля</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">Calltouch</div>
+                <div class="val val-blue" style="font-size:1.2em">Через скрипт</div>
+                <div class="lbl">Подмена номеров авто</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">Яндекс.Метрика</div>
+                <div class="val val-green" style="font-size:1.2em">Нативная</div>
+                <div class="lbl">Номер счётчика</div>
+            </div>
+            <div class="metric" style="padding:16px">
+                <div style="color:var(--violet2);font-size:0.85em;margin-bottom:4px">Webhook</div>
+                <div class="val val-green" style="font-size:1.2em">Любая CRM</div>
+                <div class="lbl">POST JSON при отправке</div>
+            </div>
+        </div>
+        <div style="margin-top:16px;font-size:0.9em;color:var(--text2)">
+            <strong style="color:var(--violet2)">Полная связка:</strong> Tilda Business (1 000₽) + AmoCRM (499₽/юзер) + Roistat (7 000₽) + Calltouch (от 1 000₽) = <strong style="color:var(--cyan)">~10-15К/мес минимум</strong>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 10: АНАЛИТИКА ===== -->
+<div class="section fade-in" id="analytics">
+    <div class="section-head">
+        <div class="section-num">10</div>
+        <h2>Сквозная аналитика с ИИ</h2>
+    </div>
+    <div class="section-desc">Как настроить автоматическое соотнесение лидов из Calltouch с Битрикс24, подтянуть данные из Директа/Метрики без дублирования, и использовать AI для анализа.</div>
+
+    <div class="alert alert-violet">
+        <div class="alert-icon">&#128161;</div>
+        <div class="alert-content">
+            <h4 style="color:var(--violet2)">Главный принцип</h4>
+            <p>Calltouch уже умеет всё это из коробки: нативная интеграция с Битрикс24 + импорт расходов из Директа. Настройка за 2-3 часа без разработчика.</p>
+        </div>
+    </div>
+
+    <!-- Текущая ситуация -->
+    <div class="card">
+        <h3>Текущая проблема</h3>
+        <div class="flow" style="margin-top:12px">
+            <div class="flow-step" style="border-color:var(--cyan);background:var(--cyan-bg)">
+                <div class="flow-title" style="color:var(--cyan)">Calltouch</div>
+                <div class="flow-desc">Подменяет номера<br>Фиксирует звонки</div>
+            </div>
+            <div class="flow-arrow" style="color:var(--red)">&#8594;&#10060;</div>
+            <div class="flow-step" style="border-color:var(--red);background:var(--red-bg)">
+                <div class="flow-title" style="color:var(--red)">Ручное сравнение</div>
+                <div class="flow-desc">Менеджер вручную<br>ищет лидов в Б24</div>
+            </div>
+            <div class="flow-arrow" style="color:var(--red)">&#8594;&#10060;</div>
+            <div class="flow-step" style="border-color:var(--orange);background:var(--orange-bg)">
+                <div class="flow-title" style="color:var(--orange)">Битрикс24</div>
+                <div class="flow-desc">Данные не связаны<br>с Директом</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Решение -->
+    <div class="card card-green" style="margin-top:20px">
+        <h3 style="color:var(--green)">Решение: автоматическая связка</h3>
+        <div class="flow" style="margin-top:12px">
+            <div class="flow-step">
+                <div class="flow-title">Calltouch</div>
+                <div class="flow-desc">Звонки + заявки<br>+ UTM + источник</div>
+            </div>
+            <div class="flow-arrow">&#8594;</div>
+            <div class="flow-step" style="border-color:var(--green)">
+                <div class="flow-title" style="color:var(--green)">АВТО</div>
+                <div class="flow-desc">Нативная интеграция<br>Матчинг по телефону</div>
+            </div>
+            <div class="flow-arrow">&#8594;</div>
+            <div class="flow-step">
+                <div class="flow-title">Битрикс24</div>
+                <div class="flow-desc">Лид + контакт<br>+ запись звонка</div>
+            </div>
+            <div class="flow-arrow">&#8592;</div>
+            <div class="flow-step" style="border-color:var(--violet)">
+                <div class="flow-title" style="color:var(--violet)">Обратная связь</div>
+                <div class="flow-desc">Статус сделки<br>+ выручка → Calltouch</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI инструменты -->
+    <div class="card" style="margin-top:20px">
+        <h3>AI-инструменты для аналитики</h3>
+        <div style="overflow-x:auto">
+        <table>
+            <thead><tr><th>Платформа</th><th>AI-возможности</th><th>Цена от</th><th>Интеграции</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Roistat</strong></td><td>AI-ассистент, оптимизатор бюджета, аудитор кампаний</td><td>7 990₽/мес</td><td>Б24, Calltouch, Директ, Метрика, 200+</td></tr>
+                <tr><td><strong>Calltouch</strong></td><td>AI-скоринг лидов, предиктивная аналитика, CDP</td><td>4 900₽/мес</td><td>Б24, Директ, Метрика</td></tr>
+                <tr><td><strong>CyBrain</strong></td><td>AI-платформа: помощник по данным, автосигналы</td><td>По запросу</td><td>CRM, рекламные каналы</td></tr>
+                <tr><td><strong>CoMagic</strong></td><td>Речевая аналитика, AI-классификация звонков</td><td>5 900₽/мес</td><td>Б24, Директ</td></tr>
+                <tr><td><strong>Albato</strong></td><td>No-code автоматизация (нативные коннекторы)</td><td>999₽/мес</td><td>Calltouch, Б24, Директ</td></tr>
+                <tr><td><strong>Яндекс.Метрика</strong></td><td>Бесплатная сквозная аналитика, отчёт ROI</td><td style="color:var(--green);font-weight:700">0₽</td><td>Директ (авто), CRM через API</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- No-code -->
+    <div class="card">
+        <h3>No-code автоматизация</h3>
+        <table>
+            <thead><tr><th>Платформа</th><th>Calltouch</th><th>Битрикс24</th><th>Директ</th><th>Цена</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Albato</strong></td><td><span class="pos">Нативный</span></td><td><span class="pos">Нативный</span></td><td><span class="pos">Нативный</span></td><td>от 999₽</td></tr>
+                <tr><td><strong>Make</strong></td><td>Webhook</td><td><span class="pos">Нативный</span></td><td>HTTP</td><td>от $9</td></tr>
+                <tr><td><strong>n8n</strong> (self-hosted)</td><td>Webhook</td><td>HTTP</td><td>HTTP</td><td style="color:var(--green)">Бесплатно</td></tr>
+                <tr><td><strong>Zapier</strong></td><td>Webhook</td><td><span class="pos">Нативный</span></td><td>Нет</td><td>от $20</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 11: СХЕМА ===== -->
+<div class="section fade-in" id="scheme">
+    <div class="section-head">
+        <div class="section-num">11</div>
+        <h2>Пошаговая схема интеграции</h2>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3>Этап 1: Calltouch → Б24 <span class="badge b-violet" style="margin-left:8px">2-3 часа</span></h3>
+            <ol style="color:var(--text2);font-size:0.9em;padding-left:20px;line-height:2">
+                <li>ЛК Calltouch → Интеграции → Битрикс24</li>
+                <li>Авторизация OAuth (домен Б24)</li>
+                <li>Настройка: звонок → создать лид</li>
+                <li>Маппинг полей (телефон, UTM, источник)</li>
+                <li>Обратная синхронизация (статус сделки → CT)</li>
+                <li>Тест: позвонить на подменный номер</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h3>Этап 2: Директ → Calltouch <span class="badge b-violet" style="margin-left:8px">30 мин</span></h3>
+            <ol style="color:var(--text2);font-size:0.9em;padding-left:20px;line-height:2">
+                <li>ЛК Calltouch → Интеграции → Яндекс.Директ</li>
+                <li>OAuth авторизация в Яндексе</li>
+                <li>Выбор кампаний для отслеживания</li>
+                <li>Автоимпорт: расходы, показы, клики, CTR</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h3>Этап 3: UTM-метки в Директе <span class="badge b-violet" style="margin-left:8px">30 мин</span></h3>
+            <div style="background:var(--bg3);border-radius:8px;padding:16px;margin-top:12px;font-family:monospace;font-size:0.82em;color:var(--cyan);line-height:1.8;overflow-x:auto">
+                ?utm_source=yandex<br>
+                &amp;utm_medium=cpc<br>
+                &amp;utm_campaign={campaign_name}<br>
+                &amp;utm_content={ad_id}<br>
+                &amp;utm_term={keyword}
+            </div>
+        </div>
+        <div class="card">
+            <h3>Этап 4: Сквозная в Метрике <span class="badge b-green" style="margin-left:8px">Бесплатно</span></h3>
+            <ol style="color:var(--text2);font-size:0.9em;padding-left:20px;line-height:2">
+                <li>Метрика → Настройка → Сквозная аналитика</li>
+                <li>Расходы Директа подтянутся авто</li>
+                <li>Передать ClientID Метрики в CRM через формы</li>
+                <li>Выгрузить закрытые сделки через API</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Финальная архитектура -->
+    <div class="card card-violet" style="margin-top:20px">
+        <h3>Финальная архитектура</h3>
+        <div style="margin-top:16px">
+            <svg viewBox="0 0 800 420" style="width:100%;max-width:800px">
+                <!-- Background boxes -->
+                <rect x="310" y="10" width="180" height="50" rx="10" fill="#1C1838" stroke="#776AFE" stroke-width="1.5"/>
+                <text x="400" y="32" fill="#9B8AFF" font-size="12" font-weight="600" text-anchor="middle">Яндекс.Директ</text>
+                <text x="400" y="48" fill="#706890" font-size="10" text-anchor="middle">UTM, клики, расход</text>
+
+                <!-- Arrow down -->
+                <line x1="400" y1="60" x2="400" y2="90" stroke="#776AFE" stroke-width="1.5" marker-end="url(#arrowV)"/>
+
+                <rect x="250" y="90" width="300" height="50" rx="10" fill="#1C1838" stroke="#A1FCFF" stroke-width="1.5"/>
+                <text x="400" y="112" fill="#A1FCFF" font-size="12" font-weight="600" text-anchor="middle">Сайт клиента + Calltouch скрипт</text>
+                <text x="400" y="128" fill="#706890" font-size="10" text-anchor="middle">Подмена номеров, формы</text>
+
+                <!-- Two arrows down -->
+                <line x1="330" y1="140" x2="250" y2="180" stroke="#3DB86A" stroke-width="1.5"/>
+                <line x1="470" y1="140" x2="550" y2="180" stroke="#3DB86A" stroke-width="1.5"/>
+
+                <rect x="140" y="180" width="220" height="50" rx="10" fill="#1C1838" stroke="#3DB86A" stroke-width="1.5"/>
+                <text x="250" y="202" fill="#3DB86A" font-size="12" font-weight="600" text-anchor="middle">Заявка с формы</text>
+                <text x="250" y="218" fill="#706890" font-size="10" text-anchor="middle">+ ClientID + UTM + roistat_visit</text>
+
+                <rect x="440" y="180" width="220" height="50" rx="10" fill="#1C1838" stroke="#3DB86A" stroke-width="1.5"/>
+                <text x="550" y="202" fill="#3DB86A" font-size="12" font-weight="600" text-anchor="middle">Звонок на подменный номер</text>
+                <text x="550" y="218" fill="#706890" font-size="10" text-anchor="middle">Запись + источник + UTM</text>
+
+                <!-- Arrows to Calltouch -->
+                <line x1="250" y1="230" x2="400" y2="270" stroke="#776AFE" stroke-width="1.5"/>
+                <line x1="550" y1="230" x2="400" y2="270" stroke="#776AFE" stroke-width="1.5"/>
+
+                <rect x="270" y="270" width="260" height="50" rx="10" fill="#241E40" stroke="#776AFE" stroke-width="2"/>
+                <text x="400" y="292" fill="#776AFE" font-size="13" font-weight="700" text-anchor="middle">Calltouch</text>
+                <text x="400" y="308" fill="#706890" font-size="10" text-anchor="middle">Фиксация лида + источник + расходы Директа</text>
+
+                <!-- Arrow to Bitrix -->
+                <line x1="400" y1="320" x2="250" y2="360" stroke="#A1FCFF" stroke-width="1.5"/>
+                <!-- Arrow to Dashboard -->
+                <line x1="400" y1="320" x2="550" y2="360" stroke="#9060D0" stroke-width="1.5"/>
+
+                <rect x="120" y="355" width="260" height="50" rx="10" fill="#1C1838" stroke="#A1FCFF" stroke-width="1.5"/>
+                <text x="250" y="377" fill="#A1FCFF" font-size="12" font-weight="600" text-anchor="middle">Битрикс24 CRM</text>
+                <text x="250" y="393" fill="#706890" font-size="10" text-anchor="middle">Автосоздание лида, ведение сделки</text>
+
+                <rect x="420" y="355" width="260" height="50" rx="10" fill="#1C1838" stroke="#9060D0" stroke-width="1.5"/>
+                <text x="550" y="377" fill="#9060D0" font-size="12" font-weight="600" text-anchor="middle">Единый дашборд</text>
+                <text x="550" y="393" fill="#706890" font-size="10" text-anchor="middle">CPL, CPA, ROI по каналам + AI</text>
+
+                <!-- Back arrow Bitrix → Calltouch -->
+                <path d="M120 380 Q80 340 270 300" fill="none" stroke="#E08040" stroke-width="1" stroke-dasharray="4,4"/>
+                <text x="90" y="345" fill="#E08040" font-size="9" text-anchor="middle">обратная связь</text>
+                <text x="90" y="355" fill="#E08040" font-size="9" text-anchor="middle">статус + выручка</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Стоимость -->
+    <div class="card" style="margin-top:20px">
+        <h3>Стоимость решений</h3>
+        <table>
+            <thead><tr><th>Решение</th><th>Что входит</th><th>Стоимость/мес</th><th>Настройка</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Calltouch (нативно)</strong></td><td>Коллтрекинг + CRM + расходы Директа</td><td style="color:var(--green);font-weight:600">от 4 900₽</td><td>2-3 часа</td></tr>
+                <tr><td><strong>+ Albato</strong></td><td>Кастомная логика, фильтры</td><td>~6 000₽</td><td>3-4 часа</td></tr>
+                <tr><td><strong>Roistat (замена)</strong></td><td>Полная сквозная + AI + коллтрекинг</td><td>от 12 000₽</td><td>1-2 дня</td></tr>
+                <tr><td><strong>Я.Метрика</strong></td><td>Бесплатная сквозная + ROI-отчёт</td><td style="color:var(--green);font-weight:700">0₽</td><td>4-8 часов</td></tr>
+                <tr><td><strong>Кастом (Python/PHP)</strong></td><td>Полная гибкость</td><td>50-150К разово</td><td>1-3 недели</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 12: SWOT ===== -->
+<div class="section fade-in" id="swot">
+    <div class="section-head">
+        <div class="section-num">12</div>
+        <h2>SWOT-анализ Espace Agency</h2>
+    </div>
+
+    <div class="swot-grid">
+        <div class="swot-box swot-s">
+            <h4>Сильные стороны (Strengths)</h4>
+            <ul>
+                <li>50+ кейсов в 30+ нишах — широкая экспертиза</li>
+                <li>Перформанс-фокус с измеримым ROI (ROMI 500%+)</li>
+                <li>Компактная команда — гибкость и скорость</li>
+                <li>Мультиканальность: таргет, контекст, SEO, блогеры</li>
+                <li>Прозрачная отчётность (еженедельно + ежемесячно)</li>
+                <li>Основатель = лицо бренда (личный бренд Ангелины)</li>
+            </ul>
+        </div>
+        <div class="swot-box swot-w">
+            <h4>Слабые стороны (Weaknesses)</h4>
+            <ul>
+                <li>ИП, не ООО — ограничения для крупных тендеров</li>
+                <li>Нет публичной финансовой отчётности (ИП)</li>
+                <li>Масштабируемость ограничена размером команды</li>
+                <li>Нет рейтингового присутствия (Tagline, Ruward, AdIndex)</li>
+                <li>Отсутствие Retail Media / маркетплейс-экспертизы</li>
+                <li>Два домена (espace-agency.ru + эспейс.рф) — SEO-каннибализация</li>
+            </ul>
+        </div>
+        <div class="swot-box swot-o">
+            <h4>Возможности (Opportunities)</h4>
+            <ul>
+                <li>AI-инструменты снижают расходы и масштабируют услуги</li>
+                <li>Telegram Ads — растущий канал (+300%/год)</li>
+                <li>Retail Media — новый сегмент с огромным потенциалом</li>
+                <li>Сквозная аналитика — можно предлагать как доп. услугу</li>
+                <li>AI-сайты — быстрое создание лендингов для клиентов</li>
+                <li>10-15% мелких агентств уходят — их клиенты ищут замену</li>
+            </ul>
+        </div>
+        <div class="swot-box swot-t">
+            <h4>Угрозы (Threats)</h4>
+            <ul>
+                <li>Медиаинфляция +20-40% — рост CPL для клиентов</li>
+                <li>Крупные агентства поглощают рынок (ТОП-5 = 40%+ выручки)</li>
+                <li>AI-автоматизация Яндекса снижает ценность ручного управления</li>
+                <li>Кадровый дефицит — зарплаты +15-25%/год</li>
+                <li>Клиенты уходят в in-house с AI-инструментами</li>
+                <li>Регуляторное давление (маркировка, ОРД)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SECTION 13: РЕКОМЕНДАЦИИ ===== -->
+<div class="section fade-in" id="recommendations">
+    <div class="section-head">
+        <div class="section-num">13</div>
+        <h2>Стратегические рекомендации</h2>
+    </div>
+
+    <div class="grid-2">
+        <div class="card card-violet">
+            <h3>Краткосрочно (3-6 мес)</h3>
+            <div style="margin-top:12px">
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-green" style="flex-shrink:0;margin-top:2px">1</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Подать заявку в рейтинги</strong> — Tagline, Workspace, Ruward. Это даёт видимость и лиды от B2B-клиентов</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-green" style="flex-shrink:0;margin-top:2px">2</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Добавить Telegram Ads</strong> в портфель услуг. Рост 300%/год, мало конкурентов с экспертизой</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-green" style="flex-shrink:0;margin-top:2px">3</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Внедрить AI-инструменты</strong> — генерация креативов, AI-копирайтинг, автооптимизация ставок. Снижение себестоимости на 30-50%</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-green" style="flex-shrink:0;margin-top:2px">4</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Настроить сквозную аналитику</strong> для себя — Calltouch + Б24 + Директ как демо-кейс для клиентов</div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-violet">
+            <h3>Среднесрочно (6-18 мес)</h3>
+            <div style="margin-top:12px">
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-blue" style="flex-shrink:0;margin-top:2px">5</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Развить Retail Media</strong> — экспертизу по Ozon, Wildberries. Это самый быстрорастущий сегмент (+73%/год)</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-blue" style="flex-shrink:0;margin-top:2px">6</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">AI-сайты как услуга</strong> — быстрое создание лендингов через Framer/Tilda + AI. Маржа выше, срок меньше</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-blue" style="flex-shrink:0;margin-top:2px">7</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Предложить аналитику как услугу</strong> — настройка Calltouch/Roistat + дашборды для клиентов</div>
+                </div>
+                <div style="display:flex;gap:12px;margin:10px 0;align-items:flex-start">
+                    <span class="badge b-blue" style="flex-shrink:0;margin-top:2px">8</span>
+                    <div style="color:var(--text2);font-size:0.9em"><strong style="color:var(--text)">Объединить два домена</strong> — выбрать один (espace-agency.ru), 301-редирект с эспейс.рф. Усилить SEO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+        <h3>Позиционирование на рынке</h3>
+        <div style="margin-top:16px">
+            <!-- Перцептуальная карта -->
+            <svg viewBox="0 0 600 400" style="width:100%;max-width:600px">
+                <!-- Axes -->
+                <line x1="80" y1="350" x2="580" y2="350" stroke="#2A2440" stroke-width="1.5"/>
+                <line x1="80" y1="50" x2="80" y2="350" stroke="#2A2440" stroke-width="1.5"/>
+                <!-- Labels -->
+                <text x="330" y="390" fill="#706890" font-size="11" text-anchor="middle">Масштаб (выручка, штат) &#8594;</text>
+                <text x="20" y="200" fill="#706890" font-size="11" text-anchor="middle" transform="rotate(-90 20 200)">Специализация &#8594;</text>
+                <!-- Axis markers -->
+                <text x="100" y="370" fill="#706890" font-size="9">Бутик</text>
+                <text x="530" y="370" fill="#706890" font-size="9">Холдинг</text>
+                <text x="85" y="340" fill="#706890" font-size="9">Генералист</text>
+                <text x="85" y="70" fill="#706890" font-size="9">Нишевый</text>
+
+                <!-- Competitors as circles -->
+                <!-- MGCom (huge, generalist) -->
+                <circle cx="520" cy="300" r="22" fill="rgba(119,106,254,0.2)" stroke="#776AFE" stroke-width="1"/>
+                <text x="520" y="303" fill="#776AFE" font-size="8" text-anchor="middle">MGCom</text>
+                <!-- Realweb -->
+                <circle cx="440" cy="250" r="18" fill="rgba(119,106,254,0.2)" stroke="#776AFE" stroke-width="1"/>
+                <text x="440" y="253" fill="#776AFE" font-size="8" text-anchor="middle">Realweb</text>
+                <!-- Kokoc -->
+                <circle cx="380" cy="160" r="16" fill="rgba(61,184,106,0.2)" stroke="#3DB86A" stroke-width="1"/>
+                <text x="380" y="163" fill="#3DB86A" font-size="8" text-anchor="middle">Kokoc</text>
+                <!-- icontext -->
+                <circle cx="340" cy="220" r="14" fill="rgba(119,106,254,0.2)" stroke="#776AFE" stroke-width="1"/>
+                <text x="340" y="223" fill="#776AFE" font-size="8" text-anchor="middle">icontext</text>
+                <!-- Nectarin -->
+                <circle cx="280" cy="140" r="14" fill="rgba(119,106,254,0.2)" stroke="#776AFE" stroke-width="1"/>
+                <text x="280" y="143" fill="#776AFE" font-size="8" text-anchor="middle">Nectarin</text>
+                <!-- Go Mobile -->
+                <circle cx="250" cy="110" r="12" fill="rgba(119,106,254,0.2)" stroke="#776AFE" stroke-width="1"/>
+                <text x="250" y="113" fill="#776AFE" font-size="8" text-anchor="middle">Go Mobile</text>
+                <!-- E-Promo (e-com niche) -->
+                <circle cx="300" cy="100" r="12" fill="rgba(61,184,106,0.2)" stroke="#3DB86A" stroke-width="1"/>
+                <text x="300" y="103" fill="#3DB86A" font-size="8" text-anchor="middle">E-Promo</text>
+
+                <!-- ESPACE (small, specialized) -->
+                <circle cx="140" cy="140" r="16" fill="rgba(161,252,255,0.3)" stroke="#A1FCFF" stroke-width="2.5"/>
+                <text x="140" y="138" fill="#A1FCFF" font-size="9" font-weight="700" text-anchor="middle">Espace</text>
+                <text x="140" y="150" fill="#A1FCFF" font-size="7" text-anchor="middle">Agency</text>
+
+                <!-- Competitors zone -->
+                <rect x="220" y="80" width="340" height="290" rx="12" fill="none" stroke="#2A2440" stroke-width="1" stroke-dasharray="4,4"/>
+                <text x="390" y="95" fill="#2A2440" font-size="9" text-anchor="middle">Зона ТОП-20</text>
+
+                <!-- Growth arrow for Espace -->
+                <path d="M155 130 Q200 100 220 110" fill="none" stroke="#A1FCFF" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowCyan)"/>
+                <text x="195" y="95" fill="#A1FCFF" font-size="8" text-anchor="middle">цель роста</text>
+
+                <!-- Arrow markers -->
+                <defs>
+                    <marker id="arrowV" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L8,4 L0,8" fill="#776AFE"/>
+                    </marker>
+                    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L8,4 L0,8" fill="#A1FCFF"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+        <div style="font-size:0.85em;color:var(--text2);margin-top:12px">
+            <strong style="color:var(--violet2)">Вывод:</strong> Espace Agency — бутиковое нишевое агентство с фокусом на перформанс.
+            Путь роста: углубление специализации (AI + аналитика + Telegram) с постепенным масштабированием через автоматизацию,
+            а не через расширение штата. Целевой сегмент — малый и средний бизнес с бюджетом 100-500К/мес.
+        </div>
+    </div>
+</div>
+
+</div><!-- container -->
+
+<!-- FOOTER -->
+<div class="footer">
+    <p><strong style="color:var(--violet)">Espace Agency</strong> — Исследование агентского рынка России 2026</p>
+    <p style="margin-top:8px">Подготовлено в феврале 2026 | <a href="https://espace-agency.ru">espace-agency.ru</a></p>
+    <p style="margin-top:8px;font-size:0.75em">Источники: АКАР, DMC Rus, AdIndex, Workspace, Okkam, Ведомости, Forbes, Cossa</p>
+    <p style="margin-top:4px;font-size:0.72em;color:var(--text3)">* Meta Platforms Inc. признана экстремистской организацией и запрещена в РФ</p>
+</div>
+
+<!-- Scroll animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+});
+</script>
+
+</body>
+</html>
